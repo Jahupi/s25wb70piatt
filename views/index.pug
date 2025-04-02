@@ -4,4 +4,14 @@ block content
   h1= title
   p Welcome to the best website ever, #{title}
 
-  button(type="button", class="btn btn-secondary") Sample Button
+  button(type="button", class="btn btn-secondary", onclick = "faster()") Sample Button
+  div(id="faster") Faster #{value} times #{amt}
+
+  script. 
+    let value = 1
+    let amt = 2
+    function faster(){
+      amt = amt * 2
+      value = amt + value
+      document.getElementById("faster").innerText = `Faster ${value} times ${amt}`;
+    }
